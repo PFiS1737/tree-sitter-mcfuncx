@@ -1,0 +1,213 @@
+==========
+nbt number
+==========
+
+cmd abc{
+  _: 1.23f,
+  _: 1.23F,
+  _: 1.23d,
+  _: 1.23D,
+  _: 123l,
+  _: 123L,
+  _: 123s,
+  _: 123S,
+  _: 123b,
+  _: 123B,
+  _: -1.23f,
+  _: -1.23F,
+  _: -1.23d,
+  _: -1.23D,
+  _: -123l,
+  _: -123L,
+  _: -123s,
+  _: -123S,
+  _: -123b,
+  _: -123B
+}
+
+---
+
+(root
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier)
+      (object_like
+        (identifier)
+        (nbt_float)
+        (identifier)
+        (nbt_float)
+        (identifier)
+        (nbt_double)
+        (identifier)
+        (nbt_double)
+        (identifier)
+        (nbt_long)
+        (identifier)
+        (nbt_long)
+        (identifier)
+        (nbt_short)
+        (identifier)
+        (nbt_short)
+        (identifier)
+        (nbt_byte)
+        (identifier)
+        (nbt_byte)
+        (identifier)
+        (nbt_float)
+        (identifier)
+        (nbt_float)
+        (identifier)
+        (nbt_double)
+        (identifier)
+        (nbt_double)
+        (identifier)
+        (nbt_long)
+        (identifier)
+        (nbt_long)
+        (identifier)
+        (nbt_short)
+        (identifier)
+        (nbt_short)
+        (identifier)
+        (nbt_byte)
+        (identifier)
+        (nbt_byte)))))
+
+=========
+nbt array
+=========
+
+cmd {
+  _: [1l, 2b, 3.0d, 4.0f, 5s, true, false, "str", 123, 0.123],
+  _: [L; 1l, 2l, 3l],
+  _: [I; 123, 456, 789],
+  _: [B; 1b, 2b, 3b, true, false]
+}
+
+---
+
+(root
+  (command
+    (command_name)
+    (object_like
+      (identifier)
+      (array_like
+        (nbt_long)
+        (nbt_byte)
+        (nbt_double)
+        (nbt_float)
+        (nbt_short)
+        (boolean)
+        (boolean)
+        (string)
+        (integer)
+        (float))
+      (identifier)
+      (nbt_long_array
+        (nbt_long)
+        (nbt_long)
+        (nbt_long))
+      (identifier)
+      (nbt_integer_array
+        (integer)
+        (integer)
+        (integer))
+      (identifier)
+      (nbt_byte_array
+        (nbt_byte)
+        (nbt_byte)
+        (nbt_byte)
+        (boolean)
+        (boolean)))))
+
+========
+nbt path
+========
+
+# see https://minecraft.wiki/w/NBT_path_format
+
+cmd VillagerData{profession:"minecraft:nitwit"}.VillagerData{}
+cmd Pos[0].Inventory[-1].ActiveEffects[]
+cmd Inventory[{Count:25b}].Foo[{}]
+cmd foo[][{}].foo.bar[0][0].baz
+cmd foo.bar[0]."A [crazy name]!".baz Items[1].tag.pages[3]
+
+---
+
+(root
+  (comment)
+  (command
+    (command_name)
+    (nbt_path
+      (identifier_composite
+        (identifier)
+        (object_like
+          (identifier)
+          (string)))
+      (identifier_composite
+        (identifier)
+        (object_like))))
+  (command
+    (command_name)
+    (nbt_path
+      (identifier_composite
+        (identifier)
+        (array_like
+          (integer)))
+      (identifier_composite
+        (identifier)
+        (array_like
+          (integer)))
+      (identifier_composite
+        (identifier)
+        (object_like))))
+  (command
+    (command_name)
+    (nbt_path
+      (identifier_composite
+        (identifier)
+        (array_like
+          (object_like
+            (identifier)
+            (nbt_byte))))
+      (identifier_composite
+        (identifier)
+        (array_like
+          (object_like)))))
+  (command
+    (command_name)
+    (nbt_path
+      (identifier_composite
+        (identifier)
+        (object_like)
+        (array_like
+          (object_like)))
+      (identifier)
+      (identifier_composite
+        (identifier)
+        (array_like
+          (integer))
+        (array_like
+          (integer)))
+      (identifier)))
+  (command
+    (command_name)
+    (nbt_path
+      (identifier)
+      (identifier_composite
+        (identifier)
+        (array_like
+          (integer)))
+      (string)
+      (identifier))
+    (nbt_path
+      (identifier_composite
+        (identifier)
+        (array_like
+          (integer)))
+      (identifier)
+      (identifier_composite
+        (identifier)
+        (array_like
+          (integer))))))

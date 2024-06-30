@@ -1,0 +1,210 @@
+======
+number
+======
+
+cmd 123 123.456 +123 +123.456 -123 -123.456
+
+---
+
+(root
+  (command
+    (command_name)
+    (integer)
+    (float)
+    (integer)
+    (float)
+    (integer)
+    (float)))
+
+======
+string
+======
+
+cmd "" "str" "str-str " "str 1_234 str" "1/23.4str" "1234 str" "str123" "¢×√×¢×π¥×¥π¥"
+cmd "str \"str\" str" "str with \n line break" "formatting §k§5text§r §zError"
+cmd "hello %%s and %%s" "hello %%1 and %%2 and %%0"
+
+cmd '' 'str' 'str-str ' 'str 1_234 str' '1/23.4str' '1234 str' 'str123' '¢×√×¢×π¥×¥π¥'
+cmd 'str \'str\' str' 'str with \n line break' 'formatting §k§5text§r §zError'
+cmd 'hello %%s and %%s' 'hello %%1 and %%2 and %%0'
+
+---
+
+(root
+  (command
+    (command_name)
+    (string)
+    (string)
+    (string)
+    (string)
+    (string)
+    (string)
+    (string)
+    (string))
+  (command
+    (command_name)
+    (string
+      (escape_sequence)
+      (escape_sequence))
+    (string
+      (escape_sequence))
+    (string
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)))
+  (command
+    (command_name)
+    (string
+      (escape_sequence)
+      (escape_sequence))
+    (string
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)))
+  (command
+    (command_name)
+    (string)
+    (string)
+    (string)
+    (string)
+    (string)
+    (string)
+    (string)
+    (string))
+  (command
+    (command_name)
+    (string
+      (escape_sequence)
+      (escape_sequence))
+    (string
+      (escape_sequence))
+    (string
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence)))
+  (command
+    (command_name)
+    (string
+      (escape_sequence)
+      (escape_sequence))
+    (string
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence))))
+
+=======
+boolean
+=======
+
+cmd true false
+
+---
+
+(root
+  (command
+    (command_name)
+    (boolean)
+    (boolean)))
+
+====
+axis
+====
+
+cmd ~ ~123 ~123.456 ~+123 ~+123.456 ~-123 ~-123.456 ^ ^123 ^123.456 ^+123 ^+123.456 ^-123 ^-123.456
+cmd ~~~ ^^^ ~~ ^^
+
+---
+
+(root
+  (command
+    (command_name)
+    (axis)
+    (axis
+      (integer))
+    (axis
+      (float))
+    (axis
+      (integer))
+    (axis
+      (float))
+    (axis
+      (integer))
+    (axis
+      (float))
+    (axis)
+    (axis
+      (integer))
+    (axis
+      (float))
+    (axis
+      (integer))
+    (axis
+      (float))
+    (axis
+      (integer))
+    (axis
+      (float)))
+  (command
+    (command_name)
+    (ERROR)
+    (axis)
+    (ERROR)
+    (axis)
+    (ERROR)
+    (axis)
+    (ERROR)
+    (axis)))
+
+=====
+range
+=====
+
+cmd 123.. ..123 123..456 -123.. ..-123 -123..-456 -123..456 6.9.. ..7.8 0.6..4.5 4..7.9 2.4..7 ..-3.4 -99.67.. -12.7..-5.8 -3.4..5.7 
+
+---
+
+(root
+  (command
+    (command_name)
+    (range
+      (integer))
+    (range
+      (integer))
+    (range
+      (integer)
+      (integer))
+    (range
+      (integer))
+    (range
+      (integer))
+    (range
+      (integer)
+      (integer))
+    (range
+      (integer)
+      (integer))
+    (range
+      (float))
+    (range
+      (float))
+    (range
+      (float)
+      (float))
+    (range
+      (integer)
+      (float))
+    (range
+      (float)
+      (integer))
+    (range
+      (float))
+    (range
+      (float))
+    (range
+      (float)
+      (float))
+    (range
+      (float)
+      (float))))

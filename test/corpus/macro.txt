@@ -1,0 +1,50 @@
+=============
+macro command
+=============
+
+$cmd abc
+cmd abc run $cmd
+
+---
+
+(root
+  (command
+    (command_name)
+    (identifier))
+  (command
+    (command_name)
+    (identifier)
+    (subcommand_keyword)
+    (command_name)))
+
+================
+macro identifier
+================
+
+cmd abc ${ abc } 123
+
+cmd @a[
+  x = ${ value },
+  ${ key } = 124
+]
+
+---
+
+(root
+  (command
+    (command_name)
+    (identifier)
+    (identifier
+      (macro_key))
+    (integer))
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier)
+      (object_like
+        (identifier)
+        (identifier
+          (macro_key))
+        (identifier
+          (macro_key))
+        (integer)))))

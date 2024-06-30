@@ -1,0 +1,39 @@
+==================
+object like - nest
+==================
+
+cmd [
+  abc=a,
+  def={
+    abc:"str v",
+    def:~-6.8,
+    123:[
+      "str k":v-abc,
+      #abc:4..9
+    ]
+  }
+]
+
+---
+
+(root
+  (command
+    (command_name)
+    (object_like
+      (identifier)
+      (identifier)
+      (identifier)
+      (object_like
+        (identifier)
+        (string)
+        (identifier)
+        (axis
+          (float))
+        (integer)
+        (object_like
+          (string)
+          (identifier)
+          (identifier)
+          (range
+            (integer)
+            (integer)))))))

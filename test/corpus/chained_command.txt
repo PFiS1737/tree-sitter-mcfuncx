@@ -1,0 +1,19 @@
+===============
+chained command
+===============
+
+cmd1 123 abc ~123 run cmd2 abc 123
+
+---
+
+(root
+  (command
+    (command_name)
+    (integer)
+    (identifier)
+    (axis
+      (integer))
+    (subcommand_keyword)
+    (command_name)
+    (identifier)
+    (integer)))

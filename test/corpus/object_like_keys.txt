@@ -1,0 +1,35 @@
+===================
+object like - keys
+===================
+
+cmd abc[
+  abc=,
+  abc123=,
+  abc123abc=,
+  @abc=,
+  #abc=,
+  _abc_123=,
+  "abc def 123 £¢€¥"=,
+  123=,
+  _=,
+  *=
+]
+
+---
+
+(root
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier)
+      (object_like
+        (identifier)
+        (identifier)
+        (identifier)
+        (identifier)
+        (identifier)
+        (identifier)
+        (string)
+        (integer)
+        (identifier)
+        (identifier)))))

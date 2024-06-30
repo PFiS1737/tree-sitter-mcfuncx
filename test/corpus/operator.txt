@@ -1,0 +1,30 @@
+========
+operator
+========
+
+cmd a = b += c -= d *= e /= f %= g >< h > i < j
+
+---
+
+(root
+  (command
+    (command_name)
+    (identifier)
+    (operator)
+    (identifier)
+    (operator)
+    (identifier)
+    (operator)
+    (identifier)
+    (operator)
+    (identifier)
+    (operator)
+    (identifier)
+    (operator)
+    (identifier)
+    (operator)
+    (identifier)
+    (operator)
+    (identifier)
+    (operator)
+    (identifier)))

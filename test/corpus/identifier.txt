@@ -1,0 +1,195 @@
+==========
+identifier
+==========
+
+cmd abc123 abc123abc _abc123 abc_123 @abc123 @123 @_34abc5 #abc #abc123 #123abc
+cmd abc.abc.abc abc.abc123.abc abc.abc123abc abc.123.def.456
+
+cmd §1abcdef§r§2123abc
+
+---
+
+(root
+  (command
+    (command_name)
+    (identifier)
+    (identifier)
+    (identifier)
+    (identifier)
+    (identifier)
+    (identifier)
+    (identifier)
+    (identifier)
+    (identifier)
+    (identifier))
+  (command
+    (command_name)
+    (identifier)
+    (identifier)
+    (identifier)
+    (identifier))
+  (command
+    (command_name)
+    (identifier
+      (escape_sequence)
+      (escape_sequence)
+      (escape_sequence))))
+
+===============
+identifier uuid
+===============
+
+cmd 5a1fe25d-4532-44d2-a232-ff45a2fcccdd
+cmd 0a17f52f-7674-41cb-99b6-02e2eae06fc9 dbc05f37-9ce3-4b11-9bbc-32d7340eaffd
+
+---
+
+(root
+  (command
+    (command_name)
+    (identifier))
+  (command
+    (command_name)
+    (identifier)
+    (identifier)))
+
+===============
+identifier path
+===============
+
+cmd abc/abc/abc
+cmd abc/abc123/abc abc/abc123abc
+cmd abc/a-bc123.abc/abc-abc123/abc.abc123.abc
+cmd abc/abc123.a-bc123/abc-abc-abc123 abc/abc123.abc/ab-c123abc/abc123-abc
+
+---
+
+(root
+  (command
+    (command_name)
+    (identifier))
+  (command
+    (command_name)
+    (identifier)
+    (identifier))
+  (command
+    (command_name)
+    (identifier))
+  (command
+    (command_name)
+    (identifier)
+    (identifier)))
+
+=====================
+identifier namespaced
+=====================
+
+cmd abc:abc
+cmd abc:abc123
+cmd abc123:abc abc.abc123:abc.abc
+cmd abc.abc:abc.abc123
+cmd abc.abc123:abc.abc123
+cmd abc.abc123abc:abc123.abc abc123.abc:abc123abc.abc123
+
+---
+
+(root
+  (command
+    (command_name)
+    (identifier
+      (identifier)))
+  (command
+    (command_name)
+    (identifier
+      (identifier)))
+  (command
+    (command_name)
+    (identifier
+      (identifier))
+    (identifier
+      (identifier)))
+  (command
+    (command_name)
+    (identifier
+      (identifier)))
+  (command
+    (command_name)
+    (identifier
+      (identifier)))
+  (command
+    (command_name)
+    (identifier
+      (identifier))
+    (identifier
+      (identifier))))
+
+====================
+identifier composite
+====================
+
+cmd abc[]
+cmd abc{}
+
+cmd @abc[]
+
+cmd #abc[]
+cmd #abc{}
+
+cmd abc[]{}
+cmd abc{}[]
+
+cmd abc:abc[]
+abc abc:#abc{}
+
+---
+
+(root
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier)
+      (object_like)))
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier)
+      (object_like)))
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier)
+      (object_like)))
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier)
+      (object_like)))
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier)
+      (object_like)))
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier)
+      (object_like)
+      (object_like)))
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier)
+      (object_like)
+      (object_like)))
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier
+        (identifier))
+      (object_like)))
+  (command
+    (command_name)
+    (identifier_composite
+      (identifier
+        (identifier))
+      (object_like))))

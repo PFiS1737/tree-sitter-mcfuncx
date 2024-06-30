@@ -1,0 +1,21 @@
+[package]
+name = "tree-sitter-mcfuncx"
+description = "A tree sitter grammar for Minecraft command function"
+version = "0.0.1"
+keywords = ["parser", "lexer", "minecraft", "tree-sitter"]
+categories = ["parsing"]
+repository = "https://github.com/PFiS1737/tree-sitter-mcfuncx"
+edition = "2018"
+license = "MIT"
+
+build = "bindings/rust/build.rs"
+include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*"]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter = "~0.22.6"
+
+[build-dependencies]
+cc = "1.0"

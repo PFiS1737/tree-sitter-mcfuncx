@@ -1,0 +1,91 @@
+====
+json
+====
+
+cmd { \
+  "rawtext": [ \
+    { \
+      "translate": "§l§oChapter %%s", \
+      "with": [ "I" ] \
+    } \
+  ] \
+}
+
+cmd {
+  "rawtext": [
+    {
+      "translate": "Hello %%s and %%s",
+      "with": [ "Steve", "Alex" ]
+    }
+  ]
+}
+
+cmd {
+  "rawtext": [
+    {
+      "translate": "Hello %%s and %%s",
+      "with": {
+        "rawtext": [
+          {
+            "text": "Steve"
+          },
+          {
+            "translate": "item.apple.name"
+          }
+        ]
+      }
+    }
+  ]
+}
+
+---
+
+(root
+  (command
+    (command_name)
+    (object_like
+      (string)
+      (array_like
+        (object_like
+          (string)
+          (string
+            (escape_sequence)
+            (escape_sequence)
+            (escape_sequence))
+          (string)
+          (array_like
+            (string))))))
+  (command
+    (command_name)
+    (object_like
+      (string)
+      (array_like
+        (object_like
+          (string)
+          (string
+            (escape_sequence)
+            (escape_sequence))
+          (string)
+          (array_like
+            (string)
+            (string))))))
+  (command
+    (command_name)
+    (object_like
+      (string)
+      (array_like
+        (object_like
+          (string)
+          (string
+            (escape_sequence)
+            (escape_sequence))
+          (string)
+          (object_like
+            (string)
+            (array_like
+              (object_like
+                (string)
+                (string))
+              (object_like
+                (string)
+                (string)))))))))

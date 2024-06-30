@@ -1,0 +1,65 @@
+{
+  "name": "tree-sitter-mcfuncx",
+  "version": "0.0.1",
+  "description": "A tree sitter grammar for Minecraft command function",
+  "main": "bindings/node",
+  "types": "bindings/node",
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp build",
+    "test": "tree-sitter test && tree-sitter parse examples/*.* -q -t -s",
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip"
+  },
+  "keywords": [
+    "parser",
+    "lexer",
+    "minecraft",
+    "tree-sitter"
+  ],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "author": "PFiS1737",
+  "license": "MIT",
+  "homepage": "https://github.com/PFiS1737/tree-sitter-mcfuncx#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PFiS1737/tree-sitter-mcfuncx"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8",
+    "prebuildify": "^6.0.0",
+    "@biomejs/biome": "^1.7.3"
+  },
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.mcfuncx",
+      "file-types": [
+        "mcfuncx",
+        "mcfunction"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "injection-regex": "^(mcfuncx|mcfunction)$"
+    }
+  ],
+  "packageManager": "pnpm@9.3.0+sha512.ee7b93e0c2bd11409c6424f92b866f31d3ea1bef5fbe47d3c7500cdc3c9668833d2e55681ad66df5b640c61fa9dc25d546efa54d76d7f8bf54b13614ac293631"
+}
