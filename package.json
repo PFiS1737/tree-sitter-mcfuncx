@@ -10,12 +10,7 @@
     "install": "node-gyp-build",
     "prebuildify": "prebuildify --napi --strip"
   },
-  "keywords": [
-    "parser",
-    "lexer",
-    "minecraft",
-    "tree-sitter"
-  ],
+  "keywords": ["parser", "lexer", "minecraft", "tree-sitter"],
   "files": [
     "grammar.js",
     "binding.gyp",
@@ -32,7 +27,7 @@
     "url": "https://github.com/PFiS1737/tree-sitter-mcfuncx"
   },
   "devDependencies": {
-    "tree-sitter-cli": "^0.20.8",
+    "tree-sitter-cli": "^0.22.6",
     "prebuildify": "^6.0.0",
     "@biomejs/biome": "^1.7.3"
   },
@@ -41,7 +36,7 @@
     "node-gyp-build": "^4.8.0"
   },
   "peerDependencies": {
-    "tree-sitter": "^0.21.0"
+    "tree-sitter": "^0.21.1"
   },
   "peerDependenciesMeta": {
     "tree_sitter": {
@@ -51,13 +46,8 @@
   "tree-sitter": [
     {
       "scope": "source.mcfuncx",
-      "file-types": [
-        "mcfuncx",
-        "mcfunction"
-      ],
-      "highlights": [
-        "queries/highlights.scm"
-      ],
+      "file-types": ["mcfuncx", "mcfunction"],
+      "highlights": ["queries/highlights.scm"],
       "injection-regex": "^(mcfuncx|mcfunction)$"
     }
   ],
