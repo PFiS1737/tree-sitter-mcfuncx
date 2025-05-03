@@ -1,3 +1,9 @@
+/**
+ * @file A tree sitter grammar for Minecraft command function
+ * @author PFiS1737 <pfis1737@gmail.com>
+ * @license MIT
+ */
+
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 

@@ -1,21 +1,41 @@
 [package]
 name = "tree-sitter-mcfuncx"
 description = "A tree sitter grammar for Minecraft command function"
-version = "0.0.1"
-keywords = ["parser", "lexer", "minecraft", "tree-sitter"]
-categories = ["parsing"]
-repository = "https://github.com/PFiS1737/tree-sitter-mcfuncx"
-edition = "2018"
+version = "0.1.0"
+authors = ["PFiS1737 <pfis1737@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+keywords = [
+  "incremental",
+  "parsing",
+  "tree-sitter",
+  "mcfunction",
+  "mcfuncx",
+  "minecraft",
+]
+categories = ["parser-implementations", "parsing", "text-editors"]
+repository = "https://github.com/PFiS1737/tree-sitter-mcfuncx"
+edition = "2021"
+autoexamples = false
 
 build = "bindings/rust/build.rs"
-include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*"]
+include = [
+  "bindings/rust/*",
+  "grammar.js",
+  "queries/*",
+  "src/*",
+  "tree-sitter.json",
+  "LICENSE",
+]
 
 [lib]
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter = "~0.22.6"
+tree-sitter-language = "0.1"
 
 [build-dependencies]
-cc = "1.0"
+cc = "1.2"
+
+[dev-dependencies]
+tree-sitter = "0.25.3"

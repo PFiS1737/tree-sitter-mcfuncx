@@ -5,16 +5,23 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tree-sitter-mcfuncx"
 description = "A tree sitter grammar for Minecraft command function"
-version = "0.0.1"
-keywords = ["parser", "lexer", "minecraft", "tree-sitter"]
+version = "0.1.0"
+keywords = [
+  "incremental",
+  "parsing",
+  "tree-sitter",
+  "mcfunction",
+  "mcfuncx",
+  "minecraft",
+]
 classifiers = [
   "Intended Audience :: Developers",
-  "License :: OSI Approved :: MIT License",
   "Topic :: Software Development :: Compilers",
   "Topic :: Text Processing :: Linguistic",
   "Typing :: Typed",
 ]
-requires-python = ">=3.8"
+authors = [{ name = "PFiS1737", email = "pfis1737@gmail.com" }]
+requires-python = ">=3.10"
 license.text = "MIT"
 readme = "README.md"
 
@@ -22,8 +29,8 @@ readme = "README.md"
 Homepage = "https://github.com/PFiS1737/tree-sitter-mcfuncx"
 
 [project.optional-dependencies]
-core = ["tree-sitter~=0.21"]
+core = ["tree-sitter~=0.24"]
 
 [tool.cibuildwheel]
-build = "cp38-*"
+build = "cp310-*"
 build-frontend = "build"

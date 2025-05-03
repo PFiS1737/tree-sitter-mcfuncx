@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       node-addon-api:
-        specifier: ^8.2.2
+        specifier: ^8.2.1
         version: 8.2.2
       node-gyp-build:
-        specifier: ^4.8.4
+        specifier: ^4.8.2
         version: 4.8.4
       tree-sitter:
         specifier: ^0.21.1
@@ -25,8 +25,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       tree-sitter-cli:
-        specifier: ^0.24.4
-        version: 0.24.4
+        specifier: ^0.25.3
+        version: 0.25.3
 
 packages:
 
@@ -125,10 +125,6 @@ packages:
     resolution: {integrity: sha512-9emqXAKhVoNrQ792nLI/wpzPpJ/bj/YXxW0CvAau1+RdGBcCRF1Dmz7719zgVsQNrzHl9Tzn3ImZ4qWFarWL0A==}
     engines: {node: ^18 || ^20 || >= 21}
 
-  node-gyp-build@4.8.3:
-    resolution: {integrity: sha512-EMS95CMJzdoSKoIiXo8pxKoL8DYxwIZXYlLmgPb8KUv794abpnLK6ynsCAWNliOjREKruYKdzbh76HHYUHX7nw==}
-    hasBin: true
-
   node-gyp-build@4.8.4:
     resolution: {integrity: sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==}
     hasBin: true
@@ -173,8 +169,8 @@ packages:
     resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
     engines: {node: '>=6'}
 
-  tree-sitter-cli@0.24.4:
-    resolution: {integrity: sha512-I4sdtDidnujYL0tR0Re9q0UJt5KrITf2m+GMHjT4LH6IC6kpM6eLzSR7RS36Z4t5ZQBjDHvg2QUJHAWQi3P2TA==}
+  tree-sitter-cli@0.25.3:
+    resolution: {integrity: sha512-Bk6ZUXG+cKnwZpfR/te4NDrKld90p6350eqWlbLwSpV9/8vmL/x8LCw+3k7quY9oMDaYoMXHMvokXJbkM5A7bA==}
     engines: {node: '>=12.0.0'}
     hasBin: true
 
@@ -259,8 +255,6 @@ snapshots:
 
   node-addon-api@8.2.2: {}
 
-  node-gyp-build@4.8.3: {}
-
   node-gyp-build@4.8.4: {}
 
   npm-run-path@3.1.0:
@@ -316,12 +310,12 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 3.6.2
 
-  tree-sitter-cli@0.24.4: {}
+  tree-sitter-cli@0.25.3: {}
 
   tree-sitter@0.21.1:
     dependencies:
       node-addon-api: 8.2.2
-      node-gyp-build: 4.8.3
+      node-gyp-build: 4.8.4
 
   util-deprecate@1.0.2: {}
 

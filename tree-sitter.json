@@ -1,27 +1,26 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
   "grammars": [
     {
       "name": "mcfuncx",
       "camelcase": "Mcfuncx",
       "scope": "source.mcfuncx",
-      "path": ".",
       "file-types": [
-        "mcfuncx",
-        "mcfunction"
+        "mcfunction",
+        "mcfuncx"
       ],
-      "highlights": [
-        "queries/highlights.scm"
-      ],
-      "injection-regex": "^(mcfuncx|mcfunction)$"
+      "injection-regex": "^mcfuncx$",
+      "class-name": "TreeSitterMcfuncx"
     }
   ],
   "metadata": {
-    "version": "0.0.1",
+    "version": "0.1.0",
     "license": "MIT",
     "description": "A tree sitter grammar for Minecraft command function",
     "authors": [
       {
-        "name": "PFiS1737"
+        "name": "PFiS1737",
+        "email": "pfis1737@gmail.com"
       }
     ],
     "links": {
@@ -34,6 +33,7 @@
     "node": true,
     "python": true,
     "rust": true,
-    "swift": true
+    "swift": true,
+    "zig": false
   }
 }
